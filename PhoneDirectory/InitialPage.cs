@@ -30,7 +30,8 @@ namespace PhoneDirectory
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            panel1.Enabled = true;
+            txtPhoneNumber.Focus();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
