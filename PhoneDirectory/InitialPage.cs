@@ -103,5 +103,15 @@ namespace PhoneDirectory
             phoneBookBindingSource.DataSource = App.PhoneBook;
             panel1.Enabled = false;                        
         }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
