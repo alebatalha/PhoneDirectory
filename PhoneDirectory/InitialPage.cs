@@ -25,8 +25,19 @@ namespace PhoneDirectory
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            panel1.Enabled = true;
-            App.PhoneBook.AddPhoneBookRow(App.PhoneBook.NewPhoneBookRow());
+            try
+            {
+                panel1.Enabled = true;
+                App.PhoneBook.AddPhoneBookRow(App.PhoneBook.NewPhoneBookRow());
+                phoneBookBindingSource.MoveLast();
+                txtPhoneNumber.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                App.PhoneBook.RejectChanges();
+            }
+
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
