@@ -106,12 +106,21 @@ namespace PhoneDirectory
 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
         {
-
+             if(e.KeyCode == Keys.Delete)
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    phoneBookBindingSource.RemoveCurrent();
+            }    
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var query=from
         }
     }
 }
