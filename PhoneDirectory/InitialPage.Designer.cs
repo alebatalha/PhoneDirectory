@@ -263,7 +263,7 @@
             this.phoneNumberDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.iDDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.phoneBookBindingSource5;
+            this.dataGridView1.DataSource = this.phoneBookBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(70, 340);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(753, 239);
