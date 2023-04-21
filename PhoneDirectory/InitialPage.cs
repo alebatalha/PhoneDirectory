@@ -37,7 +37,6 @@ namespace PhoneDirectory
                 MessageBox.Show(ex.Message,"Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 App.PhoneBook.RejectChanges();
             }
-
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -54,10 +53,18 @@ namespace PhoneDirectory
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            phoneBookBindingSource.EndEdit();
-            App.PhoneBook.AcceptChanges();
-            App.PhoneBook.WriteXml(string.Format("{0}//data.dat", Application.StartupPath));
-            panel1.Enabled = false;
+            try
+            {
+                phoneBookBindingSource.EndEdit();
+                App.PhoneBook.AcceptChanges();
+                App.PhoneBook.WriteXml(string.Format("{0}//data.dat", Application.StartupPath));
+                panel1.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                App.PhoneBook.RejectChanges();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
