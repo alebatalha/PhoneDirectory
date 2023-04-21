@@ -120,16 +120,19 @@ namespace PhoneDirectory
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if
+            if (e.KeyChar == (char)13)
             {
-                var query = from o in App.PhoneBook
-                            where o.PhoneNumber == txtSearch.Text || o.FirstName.Contains(txtSearch.Text) || o.LastName.Contains(txtSearch.Text) || o.Email == txtSearch.Text
-                            select o;
-                dataGridView1.DataSource = query.ToList();
+                if
+            {
+                    var query = from o in App.PhoneBook
+                                where o.PhoneNumber == txtSearch.Text || o.FirstName.Contains(txtSearch.Text) || o.LastName.Contains(txtSearch.Text) || o.Email == txtSearch.Text
+                                select o;
+                    dataGridView1.DataSource = query.ToList();
+                }
+                else
+                    dataGridView1.DataSource = phoneBookBindingSource;
             }
-            else
-                dataGridView1.DataSource = phoneBookBindingSource;
-          
+         
         }
     }
 }
