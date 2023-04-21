@@ -399,14 +399,14 @@ namespace PhoneDirectory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PhoneBookRow AddPhoneBookRow(string FirstName, string LastName, string PhoneNumber, string Email, string ID) {
+            public PhoneBookRow AddPhoneBookRow(string FirstName, string LastName, string PhoneNumber, string Email) {
                 PhoneBookRow rowPhoneBookRow = ((PhoneBookRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         FirstName,
                         LastName,
                         PhoneNumber,
                         Email,
-                        ID};
+                        null};
                 rowPhoneBookRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPhoneBookRow);
                 return rowPhoneBookRow;
@@ -414,7 +414,7 @@ namespace PhoneDirectory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PhoneBookRow FindByID(string ID) {
+            public PhoneBookRow FindByID(int ID) {
                 return ((PhoneBookRow)(this.Rows.Find(new object[] {
                             ID})));
             }
@@ -454,10 +454,13 @@ namespace PhoneDirectory {
                 base.Columns.Add(this.columnPhoneNumber);
                 this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmail);
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("PhoneBookKey1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
             }
@@ -666,9 +669,9 @@ namespace PhoneDirectory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ID {
+            public int ID {
                 get {
-                    return ((string)(this[this.tablePhoneBook.IDColumn]));
+                    return ((int)(this[this.tablePhoneBook.IDColumn]));
                 }
                 set {
                     this[this.tablePhoneBook.IDColumn] = value;
