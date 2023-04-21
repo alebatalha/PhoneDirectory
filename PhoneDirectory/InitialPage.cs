@@ -51,8 +51,20 @@ namespace PhoneDirectory
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
-        }
+            if (MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                phoneBookBindingSource.RemoveCurrent();
+                try
+                {
+                    App.PhoneBook.AcceptChanges();
+                    App.PhoneBook.WriteXml(string.Format("{0}//data.dat", Application.StartupPath));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    App.PhoneBook.RejectChanges();
+                }
+            }
 
         static AppData db;
         protected static AppData App
