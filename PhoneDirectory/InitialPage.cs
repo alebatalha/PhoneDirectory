@@ -40,7 +40,10 @@ namespace PhoneDirectory
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            phoneBookBindingSource.EndEdit();
+            App.PhoneBook.AcceptChanges();
+            App.PhoneBook.WriteXml(string.Format("{0}//data.dat", Application.StartupPath));
+            panel1.Enabled = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
