@@ -25,7 +25,8 @@ namespace PhoneDirectory
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-
+            panel1.Enabled = true;
+            App.PhoneBook.AddPhoneBookRow(App.PhoneBook.NewPhoneBookRow());
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
