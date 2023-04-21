@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitialPage));
             this.lblUserPhoneDirectory = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
@@ -35,10 +36,10 @@
             this.lnlPhoneNumber = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,9 +49,19 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.appData = new PhoneDirectory.AppData();
+            this.phoneBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phoneBookBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.phoneBookBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.phoneBookBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUserPhoneDirectory
@@ -121,45 +132,49 @@
             this.lblSearch.TabIndex = 5;
             this.lblSearch.Text = "Seacrh";
             // 
-            // textBox1
+            // txtFirstName
             // 
-            this.textBox1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.textBox1.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.textBox1.Location = new System.Drawing.Point(382, 94);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 26);
-            this.textBox1.TabIndex = 6;
+            this.txtFirstName.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.txtFirstName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookBindingSource, "FirstName", true));
+            this.txtFirstName.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.txtFirstName.Location = new System.Drawing.Point(382, 94);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(269, 26);
+            this.txtFirstName.TabIndex = 6;
             // 
-            // textBox2
+            // txtLastName
             // 
-            this.textBox2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.textBox2.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.textBox2.Location = new System.Drawing.Point(382, 126);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(269, 26);
-            this.textBox2.TabIndex = 7;
+            this.txtLastName.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.txtLastName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookBindingSource1, "LastName", true));
+            this.txtLastName.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.txtLastName.Location = new System.Drawing.Point(382, 126);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(269, 26);
+            this.txtLastName.TabIndex = 7;
             // 
-            // textBox3
+            // txtPhoneNumber
             // 
-            this.textBox3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.textBox3.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.textBox3.Location = new System.Drawing.Point(382, 158);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(269, 26);
-            this.textBox3.TabIndex = 8;
+            this.txtPhoneNumber.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.txtPhoneNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookBindingSource2, "PhoneNumber", true));
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNumber.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(382, 158);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(269, 26);
+            this.txtPhoneNumber.TabIndex = 8;
             // 
-            // textBox4
+            // txtEmail
             // 
-            this.textBox4.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.textBox4.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.textBox4.Location = new System.Drawing.Point(382, 190);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(269, 26);
-            this.textBox4.TabIndex = 9;
+            this.txtEmail.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phoneBookBindingSource3, "Email", true));
+            this.txtEmail.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.txtEmail.Location = new System.Drawing.Point(382, 190);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(269, 26);
+            this.txtEmail.TabIndex = 9;
             // 
             // textBox5
             // 
@@ -185,10 +200,10 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.txtPhoneNumber);
+            this.panel1.Controls.Add(this.txtLastName);
+            this.panel1.Controls.Add(this.txtFirstName);
             this.panel1.Controls.Add(this.lblEmail);
             this.panel1.Controls.Add(this.lnlPhoneNumber);
             this.panel1.Controls.Add(this.lblLastName);
@@ -267,6 +282,31 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 
+            // appData
+            // 
+            this.appData.DataSetName = "AppData";
+            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // phoneBookBindingSource
+            // 
+            this.phoneBookBindingSource.DataMember = "PhoneBook";
+            this.phoneBookBindingSource.DataSource = this.appData;
+            // 
+            // phoneBookBindingSource1
+            // 
+            this.phoneBookBindingSource1.DataMember = "PhoneBook";
+            this.phoneBookBindingSource1.DataSource = this.appData;
+            // 
+            // phoneBookBindingSource2
+            // 
+            this.phoneBookBindingSource2.DataMember = "PhoneBook";
+            this.phoneBookBindingSource2.DataSource = this.appData;
+            // 
+            // phoneBookBindingSource3
+            // 
+            this.phoneBookBindingSource3.DataMember = "PhoneBook";
+            this.phoneBookBindingSource3.DataSource = this.appData;
+            // 
             // InitialPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -290,6 +330,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,10 +348,10 @@
         private System.Windows.Forms.Label lnlPhoneNumber;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
@@ -316,6 +361,11 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.BindingSource phoneBookBindingSource;
+        private AppData appData;
+        private System.Windows.Forms.BindingSource phoneBookBindingSource1;
+        private System.Windows.Forms.BindingSource phoneBookBindingSource2;
+        private System.Windows.Forms.BindingSource phoneBookBindingSource3;
     }
 }
 
