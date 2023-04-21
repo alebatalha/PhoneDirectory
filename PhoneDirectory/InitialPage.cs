@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,9 +48,24 @@ namespace PhoneDirectory
 
         }
 
+        static AppData db;
+        protected static AppData App
+        {
+            get 
+            { 
+                if(db == null)
+                    db= new AppData();
+               return db; 
+            }
+        }
+
         private void InitialPage_Load(object sender, EventArgs e)
         {
-
+            string fileName = string.Format("{0}//data.dat", Application.StartupPath);
+            if (File.Exists(fileName))
+                App.PhoneBook.ReadXml(fileName);
+            phoneBookBindingSource.DataSource = App.PhoneBook;
+            panel1.Enabled = false;                        
         }
     }
 }
