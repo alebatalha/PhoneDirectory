@@ -37,40 +37,35 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.phoneBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appData = new PhoneDirectory.AppData();
             this.txtLastName = new System.Windows.Forms.TextBox();
+            this.phoneBookBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.phoneBookBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.phoneBookBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.phoneBookBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.appDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnNew = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.appDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appData = new PhoneDirectory.AppData();
-            this.phoneBookBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.phoneBookBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.phoneBookBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.phoneBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appDataBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUserPhoneDirectory
@@ -152,6 +147,16 @@
             this.txtFirstName.Size = new System.Drawing.Size(269, 26);
             this.txtFirstName.TabIndex = 6;
             // 
+            // phoneBookBindingSource
+            // 
+            this.phoneBookBindingSource.DataMember = "PhoneBook";
+            this.phoneBookBindingSource.DataSource = this.appData;
+            // 
+            // appData
+            // 
+            this.appData.DataSetName = "AppData";
+            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtLastName
             // 
             this.txtLastName.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -162,6 +167,11 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(269, 26);
             this.txtLastName.TabIndex = 7;
+            // 
+            // phoneBookBindingSource1
+            // 
+            this.phoneBookBindingSource1.DataMember = "PhoneBook";
+            this.phoneBookBindingSource1.DataSource = this.appData;
             // 
             // txtPhoneNumber
             // 
@@ -174,6 +184,11 @@
             this.txtPhoneNumber.Size = new System.Drawing.Size(269, 26);
             this.txtPhoneNumber.TabIndex = 8;
             // 
+            // phoneBookBindingSource2
+            // 
+            this.phoneBookBindingSource2.DataMember = "PhoneBook";
+            this.phoneBookBindingSource2.DataSource = this.appData;
+            // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -184,6 +199,11 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(269, 26);
             this.txtEmail.TabIndex = 9;
+            // 
+            // phoneBookBindingSource3
+            // 
+            this.phoneBookBindingSource3.DataMember = "PhoneBook";
+            this.phoneBookBindingSource3.DataSource = this.appData;
             // 
             // txtSearch
             // 
@@ -227,15 +247,10 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.phoneNumberDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.iDDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.phoneBookBindingSource4;
+            this.dataGridView1.DataSource = this.appDataBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(70, 340);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(753, 239);
@@ -246,6 +261,11 @@
             // 
             this.phoneBookBindingSource4.DataMember = "PhoneBook";
             this.phoneBookBindingSource4.DataSource = this.appDataBindingSource;
+            // 
+            // appDataBindingSource
+            // 
+            this.appDataBindingSource.DataSource = this.appData;
+            this.appDataBindingSource.Position = 0;
             // 
             // btnNew
             // 
@@ -312,67 +332,6 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // appDataBindingSource
-            // 
-            this.appDataBindingSource.DataSource = this.appData;
-            this.appDataBindingSource.Position = 0;
-            // 
-            // appData
-            // 
-            this.appData.DataSetName = "AppData";
-            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // phoneBookBindingSource3
-            // 
-            this.phoneBookBindingSource3.DataMember = "PhoneBook";
-            this.phoneBookBindingSource3.DataSource = this.appData;
-            // 
-            // phoneBookBindingSource2
-            // 
-            this.phoneBookBindingSource2.DataMember = "PhoneBook";
-            this.phoneBookBindingSource2.DataSource = this.appData;
-            // 
-            // phoneBookBindingSource1
-            // 
-            this.phoneBookBindingSource1.DataMember = "PhoneBook";
-            this.phoneBookBindingSource1.DataSource = this.appData;
-            // 
-            // phoneBookBindingSource
-            // 
-            this.phoneBookBindingSource.DataMember = "PhoneBook";
-            this.phoneBookBindingSource.DataSource = this.appData;
-            // 
             // InitialPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -393,17 +352,17 @@
             this.Name = "InitialPage";
             this.Text = "PhoneBook Directory";
             this.Load += new System.EventHandler(this.InitialPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appDataBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBookBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,11 +394,6 @@
         private System.Windows.Forms.BindingSource phoneBookBindingSource1;
         private System.Windows.Forms.BindingSource phoneBookBindingSource2;
         private System.Windows.Forms.BindingSource phoneBookBindingSource3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource phoneBookBindingSource4;
         private System.Windows.Forms.BindingSource appDataBindingSource;
     }
