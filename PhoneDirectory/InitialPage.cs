@@ -83,6 +83,7 @@ namespace PhoneDirectory
                     App.PhoneBook.RejectChanges();
                 }
             }
+        }
 
         static AppData db;
         protected static AppData App
@@ -108,7 +109,7 @@ namespace PhoneDirectory
         {
              if(e.KeyCode == Keys.Delete)
             {
-                if (MessageBox.Show("Are you sure want to delete this record?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure want to delete this record?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     phoneBookBindingSource.RemoveCurrent();
             }    
         }
@@ -122,7 +123,7 @@ namespace PhoneDirectory
         {
             if (e.KeyChar == (char)13)
             {
-                if
+                if (!string.IsNullOrEmpty(txtSearch.Text))
             {
                     var query = from o in App.PhoneBook
                                 where o.PhoneNumber == txtSearch.Text || o.FirstName.Contains(txtSearch.Text) || o.LastName.Contains(txtSearch.Text) || o.Email == txtSearch.Text
