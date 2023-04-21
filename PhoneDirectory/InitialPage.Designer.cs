@@ -195,6 +195,7 @@
             this.txtSearch.Size = new System.Drawing.Size(269, 26);
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // pictureBox1
             // 
