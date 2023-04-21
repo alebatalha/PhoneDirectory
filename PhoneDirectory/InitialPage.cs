@@ -36,7 +36,8 @@ namespace PhoneDirectory
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            phoneBookBindingSource.ResetBindings(false);
+            panel1.Enabled=false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
